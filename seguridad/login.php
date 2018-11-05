@@ -5,9 +5,9 @@ require_once '../shared/db.php';
 require_once '../shared/sessions.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+    $usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
     $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-    $user = $usuario_model->login($email, $password);
+    $user = $usuario_model->login($usuario, $password);
     if ($user != null) {
           $_SESSION['usuario_id'] = $user['id'];
           return header('Location: /home');
@@ -34,11 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="col-md-12">
       <form method="POST">
         <div class="form-group">
-          <label for="email">Email address</label>
+          <label for="email">Usuario</label>
           <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
         </div>
         <div class="form-group">
-          <label for="password">Contraseña</label>
+          <label for="password">Coontraseña</label>
           <input type="password" class="form-control" id="password" placeholder="Password" name="password">
         </div>
         <input class="btn btn-primary" type="submit" value="Login!">

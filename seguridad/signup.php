@@ -3,14 +3,14 @@ $title = 'Registro';
 require_once '../shared/header.php';
 require_once '../shared/db.php';
 
-$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING);
+$usuario = filter_input(INPUT_POST, 'usuario', FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
 $password_verification = filter_input(INPUT_POST, 'password_verification', FILTER_SANITIZE_STRING);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($password == $password_verification) {
-        $usuario_model->insert($email, $password);
+        $usuario_model->insert($usuario, $password);
         return header('Location: /seguridad/login.php');
     }
     echo "<h3>Contraseñas no coinciden</h3>";
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="col-md-12">
       <form method="POST">
         <div class="form-group">
-          <label for="email">Email address</label>
+          <label for="email">Usuario</label>
           <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
         </div>
         <div class="form-group">
