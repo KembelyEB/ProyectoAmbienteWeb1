@@ -1,6 +1,6 @@
 <?php
 namespace Models {
-    class Categoria
+    class Compra
     {
         private $connection;
         public function __construct($connection)

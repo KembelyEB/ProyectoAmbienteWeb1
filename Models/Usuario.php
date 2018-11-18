@@ -9,16 +9,21 @@ namespace Models {
             $this->connection = $connection;
         }
 
-        public function login($usuario, $password)
+        public function login($email, $password)
         {
-          $result = $this->connection->runQuery('SELECT * FROM usuarios WHERE usuario = $1 and password = md5($2)', [$usuario, $password]);
+          $result = $this->connection->runQuery('SELECT * FROM usuarios WHERE email = $1 and password = md5($2)', [$email, $password]);
           return $result[0];
         }
 
-        public function insert($usuario, $password)
+        public function select()
         {
-            $sql = "INSERT INTO usuarios(usuario, password) VALUES ($1, md5($2))";
-            $this->connection->runStatement($sql, [$usuario, $password]);
+            return $this->connection->runQuery('SELECT * FROM usuarios');
+        }
+
+        public function insert($email, $password)
+        {
+            $sql = "INSERT INTO usuarios(email, password) VALUES ($1, md5($2))";
+            $this->connection->runStatement($sql, [$email, $password]);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Models {
         public function update($id, $nombre,$apellido,$correo,$direccion,$telefono)
         {
             $this->connection->runStatement('UPDATE clientes SET nombre = $2, apellido=$3,correo=$4,
-                direccion=$5,telefono =$6 WHERE id = $1', [$id, $nombre, $apellido,$correo,$direccion,$telefono);
+                direccion=$5,telefono =$6 WHERE id = $1', [$id, $nombre, $apellido,$correo,$direccion,$telefono]);
         }
 
         public function delete($id)
