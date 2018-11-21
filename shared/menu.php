@@ -10,13 +10,28 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto ">
         <?php
+        if(isset($_SESSION['admin']) && $_SESSION['admin']){
+       // echo "<h1>Soy administrador</h1>";
         $menu = [
+          'Home' => '/',
+          'Categoria ' => '/categoria.php',
+          'Jobs' => '/jobs.php',
+          'Mantenimiento' => '/crud/mantenimientos.php',
+          'Producto' => '/crud/productos.php',
+
+        ];
+          }
+        else{
+          $menu = [
           'Home' => '/',
           'Contact ' => '/contact_us.php',
           'Jobs' => '/jobs.php',
-          'Mantenimiento' => '/crud/mantenimientos.php',
         ];
 
+  
+        }
+
+        
         if (isset($_SESSION['usuario_id']) || !empty($_SESSION['usuario_id'])) {
             foreach ($menu as $key => $value) {
                 echo "<li class='nav-item'>

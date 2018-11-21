@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $usuario_model->login($email, $password);
     if ($user != null) {
           $_SESSION['usuario_id'] = $user['id'];
+          $_SESSION['admin'] = $user['administrador'];
           return header('Location: /home');
     } else {
           echo "<h3>Usuario o contraseña inválido!</h3>";

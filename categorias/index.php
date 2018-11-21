@@ -16,7 +16,7 @@
       <th class="text-center"><a href="/categorias/create.php" class="btn btn-success">+</a></th>
     </tr>
 <?php
-foreach ($categorias as $categoria) {
+/*foreach ($categorias as $categoria) {
     echo '<tr>';
     echo '<td>' . $categoria['id'] . '</td>';
     echo '<td>' . $categoria['nombre'] . '</td>';
@@ -27,6 +27,6 @@ foreach ($categorias as $categoria) {
     echo '</td>';
     echo '</tr>';
 }
-?>
+?>*/
   </table>
 </div>
