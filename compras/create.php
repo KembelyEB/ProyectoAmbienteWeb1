@@ -4,12 +4,11 @@ $title = 'Crear Compras';
 require_once '../shared/header.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once '../shared/db.php';
-    $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
-    $descripcion = filter_input(INPUT_POST, 'descripcion', FILTER_SANITIZE_STRING);
-    $categoria= filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_STRING);
-    $stock= filter_input(INPUT_POST, 'stock', FILTER_SANITIZE_STRING);
-    $sku = filter_input(INPUT_POST, 'sku', FILTER_SANITIZE_STRING);
-    $categoria_model->insert($nombre, $descripcion,$categoria,$stock,$sku);
+    $cliente = filter_input(INPUT_POST, 'id_cliente', FILTER_SANITIZE_STRING);
+    $producto = filter_input(INPUT_POST, 'id_producto', FILTER_SANITIZE_STRING);
+    $total= filter_input(INPUT_POST, 'total', FILTER_SANITIZE_STRING);
+   
+    $compra_model->insert($cliente,$producto,$total);
     return header('Location: /Compras');
 }
 ?>
@@ -17,26 +16,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <h1><?=$title?></h1>
   <form method="POST">
     <div class="form-group">
-      <label for="nombre">Nombre</label>
-      <input type="text" class="form-control" placeholder="Nombre" name="nombre">
+      <label for="cliente">Cliente</label>
+      <input type="text" class="form-control" placeholder="Cliente" name="cliente">
     </div>
     <div class="form-group">
-      <label for="nombre">Descripcion</label>
-      <input type="text" class="form-control" placeholder="Descripcion" name="descripcion">
+      <label for="producto">Producto</label>
+      <input type="text" class="form-control" placeholder="Producto" name="producto">
     </div>
     <div class="form-group">
-      <label for="categoria">Categoria</label>
-      <input type="text" class="form-control" placeholder="Categoria" name="Categoria">
+      <label for="total">Total</label>
+      <input type="text" class="form-control" placeholder="Total" name="total">
     </div>
-    <div class="form-group">
-      <label for="stock">Stock</label>
-      <input type="text" class="form-control" placeholder="Stock" name="stock">
-    </div>
-    <div class="form-group">
-      <label for="sku">Sku</label>
-      <input type="text" class="form-control" placeholder="Sku" name="sku">
-    </div>
+  
     <input class="btn btn-primary" type="submit" value="Aceptar">
-    <a class="btn btn-default btn-danger" href="/categorias">Cancelar</a>
+    <a class="btn btn-default btn-danger" href="/compras">Cancelar</a>
   </form>
 </div>

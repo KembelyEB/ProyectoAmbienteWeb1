@@ -9,12 +9,12 @@ $productos = $producto_model->find($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $producto_model->delete($id);
-    return header('Location: /producto');
+    return header('Location: /productos');
 }
 ?>
 <div class="container">
   <h1><?=$title?></h1>
-  <p>¿Está seguro de eliminar la categoria con el id <?=$id?></p>
+  <p>¿Está seguro de eliminar el producto con el id <?=$id?></p>
   <form method="POST">
     <input class="btn btn-primary" type="submit" value="Aceptar">
     <a class="btn btn-default btn-danger" href="/productos">Cancelar</a>

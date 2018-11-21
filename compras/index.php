@@ -11,27 +11,23 @@
   <table class="table table-striped table-bordered">
     <tr>
       <th>Id</th>
-      <th>Nombre</th>
-      <th>Descripción</th>
-       <th>Categoria</th>
-       <th>Stock</th>
-       <th>Sku<th>
-
+      <th>Cliente</th>
+      <th>Producto</th>
+       <th>Total</th>
       
-      <th class="text-center"><a href="/compras/create.php" class="btn btn-success">+</a></th>
+      
+   
     </tr>
 <?php
 foreach ($compras as $compra) {
     echo '<tr>';
     echo '<td>' . $compra['id'] . '</td>';
-    echo '<td>' . $compra['Nombre'] . '</td>';
-    echo '<td>' . $compra['Descripción'] . '</td>';
-    echo '<td>' . $compra['Categoria'] . '</td>';
-    echo '<td>' . $compra['Stock'] . '</td>';
-    echo '<td>' . $compra['Sku'] . '</td>';
+    echo '<td>' . $compra['id_cliente'] . '</td>';
+    echo '<td>' . $compra['id_producto'] . '</td>';
+    echo '<td>' . $compra['total'] . '</td>';
     echo '<td>';
-    echo '<a href="/categorias/update.php?id=' . $compra['id'] . '" class="btn btn-warning mr-2">Editar</a>';
-    echo '<a href="/categorias/delete.php?id=' . $compra['id'] . '" class="btn btn-danger">Eliminar</a>';
+
+    echo '<a href="/compras/delete.php?id=' . $compra['id'] . '" class="btn btn-danger">Eliminar</a>';
     echo '</td>';
     echo '</tr>';
 }

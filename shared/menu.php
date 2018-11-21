@@ -13,11 +13,10 @@
         if(isset($_SESSION['admin']) && $_SESSION['admin']){
        // echo "<h1>Soy administrador</h1>";
         $menu = [
-          'Home' => '/',
-          'Categoria ' => '/categoria.php',
-          'Jobs' => '/jobs.php',
-          'Mantenimiento' => '/crud/mantenimientos.php',
-          'Producto' => '/crud/productos.php',
+          'Categoria ' => '/categorias/index.php',
+          'Producto' => '/productos/index.php',
+          'Compras' => '/compras/index.php',
+          'Cliente' => '/cliente/index.php',
 
         ];
           }

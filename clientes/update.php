@@ -10,10 +10,10 @@ $clientes = $cliente_model->find($id);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $apellido = filter_input(INPUT_POST, 'apellido', FILTER_SANITIZE_STRING);
+    $telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
     $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_STRING);
     $direccion = filter_input(INPUT_POST, 'direccion', FILTER_SANITIZE_STRING);
-    $telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
-    $cliente_model->insert( $nombre, $apellido,$correo,$direccion,$telefono);
+    $cliente_model->insert($nombre, $apellido, $telefono, $correo, $direccion);
     return header('Location: /clientes');
 }
 ?>
@@ -26,8 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <input type="text" class="form-control" placeholder="Nombre" name="nombre">
     </div>
     <div class="form-group">
-      <label for="categoriaP">Apellido</label>
+      <label for="apellido">Apellido</label>
       <input type="text" class="form-control" placeholder="Apellido" name="apellido">
+    </div>
+    <div class="form-group">
+      <label for="telefono">Telefono</label>
+      <input type="text" class="form-control" placeholder="Telefono" name="telefono">
     </div>
      <div class="form-group">
       <label for="correo">Correo</label>
@@ -35,13 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="form-group">
       <label for="dirección">Dirección</label>
-      <input type="text" class="form-control" placeholder="Dirección" name="dirección">
+      <input type="text" class="form-control" placeholder="Dirección" name="direccion">
     </div>
-     <div class="form-group">
-      <label for="telefono">Telefono</label>
-      <input type="text" class="form-control" placeholder="Telefono" name="Telefono>
-    </div>
+     
     <input class="btn btn-primary" type="submit" value="Aceptar">
-    <a class="btn btn-default btn-danger" href="/categorias">Cancelar</a>
+    <a class="btn btn-default btn-danger" href="/clientes">Cancelar</a>
   </form>
 </div>
