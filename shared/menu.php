@@ -16,7 +16,7 @@
           'Categoria ' => '/categorias/index.php',
           'Producto' => '/productos/index.php',
           'Compras' => '/compras/index.php',
-          'Cliente' => '/cliente/index.php',
+          'Cliente' => '/clientes/index.php',
 
         ];
           }
@@ -25,6 +25,7 @@
           'Home' => '/',
           'Contact ' => '/contact_us.php',
           'Jobs' => '/jobs.php',
+          'Compras' => '/compras/index.php',
         ];
 
   

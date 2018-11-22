@@ -1,6 +1,6 @@
 <?php
   require_once '../shared/guard.php';
-  $title = 'Compras';
+  $title = 'Compra';
   require_once '../shared/header.php';
   require_once '../shared/db.php';
   $compras = $compra_model->select();
@@ -14,20 +14,20 @@
       <th>Cliente</th>
       <th>Producto</th>
        <th>Total</th>
-      
-      
-   
+
+        <th class="text-center"><a href="/compras/create.php" class="btn btn-success">+</a></th>
     </tr>
 <?php
-foreach ($compras as $compra) {
+foreach ($compras as $Compra) {
     echo '<tr>';
-    echo '<td>' . $compra['id'] . '</td>';
-    echo '<td>' . $compra['id_cliente'] . '</td>';
-    echo '<td>' . $compra['id_producto'] . '</td>';
-    echo '<td>' . $compra['total'] . '</td>';
+    echo '<td>' . $Compra['id'] . '</td>';
+    echo '<td>' . $Compra['id_clientes'] . '</td>';
+    echo '<td>' . $Compra['id_producto'] . '</td>';
+    echo '<td>' . $Compra['total'] . '</td>';
     echo '<td>';
 
-    echo '<a href="/compras/delete.php?id=' . $compra['id'] . '" class="btn btn-danger">Eliminar</a>';
+    echo '<a href="/compras/update.php?id=' . $compras['id'] . '" class="btn btn-warning mr-2">Editar</a>';
+    echo '<a href="/compras/delete.php?id=' . $compras['id'] . '" class="btn btn-danger">Eliminar</a>';
     echo '</td>';
     echo '</tr>';
 }

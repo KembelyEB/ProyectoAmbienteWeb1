@@ -1,6 +1,6 @@
 <?php
 require_once '../shared/guard.php';
-$title = 'Editar Compras';
+$title = 'Editar Compra';
 require_once '../shared/header.php';
 require_once '../shared/db.php';
 
@@ -8,7 +8,7 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
 $compras = $compra_model->find($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-     $cliente = filter_input(INPUT_POST, 'id_cliente', FILTER_SANITIZE_STRING);
+     $cliente = filter_input(INPUT_POST, 'id_clientes', FILTER_SANITIZE_STRING);
     $producto = filter_input(INPUT_POST, 'id_producto', FILTER_SANITIZE_STRING);
     $total= filter_input(INPUT_POST, 'total', FILTER_SANITIZE_STRING);
     $compra_model->update($cliente,$producto,$total);
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <form method="POST">
     <div class="form-group">
       <label for="cliente">Cliente</label>
-      <input type="text" class="form-control" placeholder="Cliente" name="cliente" value="<?=$compra['id_cliente']?>">
+      <input type="text" class="form-control" placeholder="Cliente" name="cliente" value="<?=$compra['id_clientes']?>">
     </div>
     <div class="form-group">
       <label for="producto">Producto</label>

@@ -9,8 +9,8 @@ $categorias = $categoria_model->find($id);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
-    $categoriaP = filter_input(INPUT_POST, 'categoriaP', FILTER_SANITIZE_STRING);
-    $categoria_model->update($id, $nombre, $categoriaP);
+    $categoriap = filter_input(INPUT_POST, 'categoriap', FILTER_SANITIZE_STRING);
+    $categoria_model->update($id, $nombre, $categoriap);
     return header('Location: /categorias');
 }
 ?>
@@ -20,11 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <form method="POST">
     <div class="form-group">
       <label for="nombre">Nombre</label>
-      <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?=$categoria['nombre']?>">>
+      <input type="text" class="form-control" placeholder="Nombre" name="nombre" value="<?= $categoria['nombre']?? ''?>">
     </div>
     <div class="form-group">
-      <label for="categoriaP">Categoria Padre</label>
-      <input type="text" class="form-control" placeholder="CategoriaP" name="categoriaP" value="<?=$categoria['categoriaP']?>">>
+      <label for="categoriap">Categoria Padre</label>
+      <input type="text" class="form-control" placeholder="CategoriaP" name="categoriap" value="<?= $categoria['categoriap']?? ''?>">
     </div>
     <input class="btn btn-primary" type="submit" value="Aceptar">
     <a class="btn btn-default btn-danger" href="/categorias">Cancelar</a>

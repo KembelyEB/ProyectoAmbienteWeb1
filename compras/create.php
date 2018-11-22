@@ -1,10 +1,10 @@
 <?php
 require_once '../shared/guard.php';
-$title = 'Crear Compras';
+$title = 'Crear Compra';
 require_once '../shared/header.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once '../shared/db.php';
-    $cliente = filter_input(INPUT_POST, 'id_cliente', FILTER_SANITIZE_STRING);
+    $cliente = filter_input(INPUT_POST, 'id_clientes', FILTER_SANITIZE_STRING);
     $producto = filter_input(INPUT_POST, 'id_producto', FILTER_SANITIZE_STRING);
     $total= filter_input(INPUT_POST, 'total', FILTER_SANITIZE_STRING);
    

@@ -18,14 +18,14 @@ namespace Models {
             return $this->connection->runQuery('SELECT * FROM categorias ORDER BY id');
         }
 
-        public function insert($nombre, $categoriaP)
+        public function insert($nombre, $categoriap)
         {
-            $this->connection->runStatement('INSERT INTO categorias(nombre, categoriaP) VALUES ($1, $2)', [$nombre, $categoriaP]);
+            $this->connection->runStatement('INSERT INTO categorias(nombre, categoriap) VALUES ($1, $2)', [$nombre, $categoriap]);
         }
 
-        public function update($id, $nombre, $categoriaP)
+        public function update($id, $nombre, $categoriap)
         {
-            $this->connection->runStatement('UPDATE categorias SET nombre = $2, categoriaP = $3 WHERE id = $1', [$id, $nombre, $categoriaP]);
+            $this->connection->runStatement('UPDATE categorias SET nombre = $2, categoriap = $3 WHERE id = $1', [$id, $nombre, $categoriap]);
         }
 
         public function delete($id)

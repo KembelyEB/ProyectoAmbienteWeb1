@@ -14,11 +14,10 @@
       <th>Nombre</th>
        <th>Apellido</th>
         <th>Telefono</th>
-       <th>Correo<th>
+       <th>Correo</th>
         <th>Dirección</th>
       
 
-      <th>Cliente/th>
       <th class="text-center"><a href="/clientes/create.php" class="btn btn-success">+</a></th>
     </tr>
 <?php

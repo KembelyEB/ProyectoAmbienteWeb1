@@ -22,12 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <input type="text" class="form-control" placeholder="Nombre" name="nombre">
     </div>
     <div class="form-group">
-      <label for="categoriaP">Apellido</label>
+      <label for="apellido">Apellido</label>
       <input type="text" class="form-control" placeholder="Apellido" name="apellido">
     </div>
      <div class="form-group">
       <label for="telefono">Telefono</label>
-      <input type="text" class="form-control" placeholder="Telefono" name="Telefono">
+      <input type="text" class="form-control" placeholder="Telefono" name="telefono">
     </div>
      <div class="form-group">
       <label for="correo">Correo</label>
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="form-group">
       <label for="dirección">Dirección</label>
-      <input type="text" class="form-control" placeholder="Dirección" name="dirección">
+      <input type="text" class="form-control" placeholder="Dirección" name="direccion">
     </div>
     
     <input class="btn btn-primary" type="submit" value="Aceptar">
