@@ -11,7 +11,7 @@ namespace Models {
 
         public function login($email, $password)
         {//volver a poner el md5
-          $result = $this->connection->runQuery("SELECT * FROM usuarios WHERE email = '$email' and password = '$password';");
+          $result = $this->connection->runQuery("SELECT * FROM usuarios WHERE email = '$email' and password = md5('$password');");
           return $result[0];
         }
 
@@ -22,7 +22,7 @@ namespace Models {
 
         public function insert($email, $password)
         {
-            $sql = "INSERT INTO usuarios(email, password) VALUES ($1, md5($2)";
+            $sql = "INSERT INTO usuarios VALUES ($password,$1, md5($2),false)";
             $this->connection->runStatement($sql, [$email, $password]);
         }
     }

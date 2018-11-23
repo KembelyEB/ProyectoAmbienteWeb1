@@ -28,7 +28,7 @@ require_once '../shared/footer.php';
 			    <h5 class="card-title">	Nomnbre: <?php echo $producto["nombre"];?></h5>
 			    <h6 class="card-subtitle mb-2 text-muted">Precio: <?php echo $producto["precio"];?></h6>
 			    <p class="card-text"><?php echo $producto["descripcion"];?></p>
-			    <a href="/guardarcompra.php?id=<?php echo $producto['id'];?>" class="btn btn-success">Comprar</a>
+			    <a href="/carrito/guardarcompra.php?id=<?php echo $producto['id'];?>" class="btn btn-success">Comprar</a>
 			  </div>
 			</div>
 

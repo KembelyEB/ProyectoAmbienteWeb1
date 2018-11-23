@@ -18,9 +18,14 @@ namespace Models {
             return $this->connection->runQuery('SELECT * FROM compras ORDER BY id');
         }
 
-        public function insert($id_clientes, $id_producto, $total)
+        public function selectcliente($idcliente)
         {
-            $this->connection->runStatement('INSERT INTO compras(id_clientes, id_producto, total) VALUES ($1, $2, $3)', [$id_clientes, $id_producto, $total]);
+            return $this->connection->runQuery("SELECT * FROM compras WHERE id_clientes = $idcliente");
+        }
+
+        public function insert($id_productos ,$id_clientes, $id_producto, $total)
+        {
+            $this->connection->runStatement("INSERT INTO compras VALUES ($id_productos, $id_clientes, $id_producto, $total)");
         }
 
         public function update($id, $id_clientes, $id_producto, $total)

@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 $title = 'Iniciar Sesión';
 require_once '../shared/header.php';
 require_once '../shared/db.php';

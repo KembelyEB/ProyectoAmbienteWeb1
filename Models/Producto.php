@@ -25,7 +25,7 @@ namespace Models {
 
         public function insert($sku, $nombre, $descripcion, $id_categoria, $stock, $precio)
         {
-            $this->connection->runStatement('INSERT INTO productos(sku,nombre,descripcion,id_categoria,stock,precio) VALUES ($1, $2, $3, $4, $5, $6)', [$sku,$nombre,$descripcion,$id_categoria,$stock,$precio]);
+            $this->connection->runStatement('INSERT INTO productos(sku,nombre,descripcion,id_categoria,stock,precio) VALUES ($sku,$1, $2, $3, $4, $5, $6)', [$sku,$nombre,$descripcion,$id_categoria,$stock,$precio]);
         }
 
         public function update($id, $sku, $nombre, $descripcion, $id_categoria, $stock, $precio)

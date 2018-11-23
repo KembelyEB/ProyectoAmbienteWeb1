@@ -8,7 +8,7 @@
 
     $productos = $producto_model->find($idproducto);
 
-	$compra_model->insert(null,$productos["id"], $idcliente,$productos["precio"]);
+	$compra_model->insert($productos["id"], $idcliente, $productos["id"], $productos["precio"]);
 
-
+	header("Location: /home");
 ?>
