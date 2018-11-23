@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto ">
         <?php
-        if(isset($_SESSION['admin']) && $_SESSION['admin']){
+        if(isset($_SESSION['admin'])){
        // echo "<h1>Soy administrador</h1>";
         $menu = [
           'Categoria ' => '/categorias/index.php',
@@ -20,7 +20,7 @@
 
         ];
           }
-        else{
+        elseif(isset($_SESSION['cliente'])){
           $menu = [
           'Home' => '/',
           'Contact ' => '/contact_us.php',

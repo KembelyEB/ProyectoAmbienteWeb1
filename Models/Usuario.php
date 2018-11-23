@@ -10,8 +10,8 @@ namespace Models {
         }
 
         public function login($email, $password)
-        {
-          $result = $this->connection->runQuery('SELECT * FROM usuarios WHERE email = $1 and password = md5($2)', [$email, $password]);
+        {//volver a poner el md5
+          $result = $this->connection->runQuery("SELECT * FROM usuarios WHERE email = '$email' and password = '$password';");
           return $result[0];
         }
 

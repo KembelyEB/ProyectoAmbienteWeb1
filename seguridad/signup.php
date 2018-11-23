@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="container">
   <h1><?=$title?></h1>
   <div class="row">
-    <div class="col-md-12">
+    <div class="center-block"  class="col-md-12">
       <form method="POST">
         <div class="form-group">
           <label for="email">Email address</label>
@@ -34,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <input type="password" class="form-control" id="password_verification" placeholder="Password" name="password_verification">
         </div>
         
-        <input class="btn btn-primary" type="submit" value="Login!">
-        <a class="btn btn-default" href="/seguridad/signup.php">Signup</a>
+        <input class="btn btn-sucess" type="submit" value="Login!">
+        <a class="btn btn-info" href="/seguridad/signup.php">Registrar</a>
       </form>
     </div>
   </div>

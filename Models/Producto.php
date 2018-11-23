@@ -18,6 +18,11 @@ namespace Models {
             return $this->connection->runQuery('SELECT * FROM productos ORDER BY id');
         }
 
+        public function selectstock($stock)                  
+        {
+            return $this->connection->runQuery("SELECT * FROM productos WHERE stock <= $stock");
+        }
+
         public function insert($sku, $nombre, $descripcion, $id_categoria, $stock, $precio)
         {
             $this->connection->runStatement('INSERT INTO productos(sku,nombre,descripcion,id_categoria,stock,precio) VALUES ($1, $2, $3, $4, $5, $6)', [$sku,$nombre,$descripcion,$id_categoria,$stock,$precio]);
