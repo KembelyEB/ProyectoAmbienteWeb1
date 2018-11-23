@@ -8,11 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sku = filter_input(INPUT_POST, 'sku', FILTER_SANITIZE_STRING);
     $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
     $descripcion = filter_input(INPUT_POST, 'descripcion',FILTER_SANITIZE_STRING);
-    $imagen = filter_input(INPUT_POST,'imagen',FILTER_SANITIZE_STRING);
-    $categoria= filter_input(INPUT_POST, 'categoria', FILTER_SANITIZE_STRING);
+    $categoria= filter_input(INPUT_POST, 'id_categoria', FILTER_SANITIZE_STRING);
     $stock= filter_input(INPUT_POST, 'stock', FILTER_SANITIZE_STRING);
     $precio= filter_input(INPUT_POST, 'precio', FILTER_SANITIZE_STRING);
-    $producto_model->insert($sku, $nombre, $descripcion,$imagen,$categoria,$stock, $precio);
+    $producto_model->insert($sku,$nombre,$descripcion,$categoria,$stock,$precio);
     return header('Location: /productos');
 }
 ?>
@@ -31,13 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <label for="descripcion">Descripcion</label>
       <input type="text" class="form-control" placeholder="Descripcion" name="descripcion">
     </div>
-    <form action="<?php echo $_SERVER['imagen'] ?>" method="post" enctype="multipart/form-data">  
-    Seleccionar Imagen: <input name="fichero" type="file" size="150" maxlength="150">  
-    <br><br> 
-</form>  
+ 
     <div class="form-group">
       <label for="id_categoria">Categoria</label>
-      <input type="text" class="form-control" placeholder="id_Categoria" name="id_categoria">
+      <input type="num" class="form-control" placeholder="Id_categoria" name="id_categoria">
     </div>
     <div class="form-group">
       <label for="stock">Stock</label>
@@ -45,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="form-group">
       <label for="precio">Precio</label>
-      <input type="text" class="form-control" placeholder="Precio" name="precio">
+      <input type="num" class="form-control" placeholder="Precio" name="precio">
     </div>
    
     <input class="btn btn-primary" type="submit" value="Aceptar">

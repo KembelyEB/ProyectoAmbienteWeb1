@@ -1,10 +1,6 @@
 <?php
 
-    //this is gonna bring the conexion from the database
-    require "conexion.php";
-
-    //this is gonna establish the conexion
-    $conexion = conexion();
+ 
     
     //this is gonna bring the information from the database
     $sql = "SELECT * FROM productos WHERE stock <= :stock;";

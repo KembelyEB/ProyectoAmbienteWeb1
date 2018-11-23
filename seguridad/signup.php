@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <label for="password_verification">Verificar</label>
           <input type="password" class="form-control" id="password_verification" placeholder="Password" name="password_verification">
         </div>
+        
         <input class="btn btn-primary" type="submit" value="Login!">
         <a class="btn btn-default" href="/seguridad/signup.php">Signup</a>
       </form>

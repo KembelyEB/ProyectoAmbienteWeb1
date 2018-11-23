@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="form-group">
       <label for="categoriap">Categoria Padre</label>
-      <input type="text" class="form-control" placeholder="CategoriaP" name="categoriap">
+      <input type="text" class="form-control" placeholder="Categoriap" name="categoriap">
     </div>
     <input class="btn btn-primary" type="submit" value="Aceptar">
     <a class="btn btn-default btn-danger" href="/categorias">Cancelar</a>

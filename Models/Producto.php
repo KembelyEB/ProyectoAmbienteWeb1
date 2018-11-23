@@ -18,14 +18,14 @@ namespace Models {
             return $this->connection->runQuery('SELECT * FROM productos ORDER BY id');
         }
 
-        public function insert($sku, $nombre,$descripcion,$id_categoria,$stock,$precio)
+        public function insert($sku, $nombre, $descripcion, $id_categoria, $stock, $precio)
         {
-            $this->connection->runStatement('INSERT INTO productos(sku,nombre,descripcion,id_categoria,stock,precio) VALUES ($1, $2,$3,$5,$6)', [$sku,$nombre,$descripcion,$id_categoria,$stock,$precio]);
+            $this->connection->runStatement('INSERT INTO productos(sku,nombre,descripcion,id_categoria,stock,precio) VALUES ($1, $2, $3, $4, $5, $6)', [$sku,$nombre,$descripcion,$id_categoria,$stock,$precio]);
         }
 
-        public function update($id, $sku, $nombre, $descripcion,$id_categoria,$stock,$precio)
+        public function update($id, $sku, $nombre, $descripcion, $id_categoria, $stock, $precio)
         {
-            $this->connection->runStatement('UPDATE productos SET nombre = $2, descripcion = $3 , id_categoria = $4,stock = $5, precio = $6  WHERE id = $1', [$id, $sku,  $nombre, $descripcion,$id_categoria,$stock,$precio]);
+            $this->connection->runStatement('UPDATE productos SET sku = $2, nombre = $3, descripcion = $4, id_categoria = $5, stock = $6, precio = $7  WHERE id = $1', [$id, $sku,  $nombre, $descripcion, $id_categoria, $stock, $precio]);
         }
 
         public function delete($id)

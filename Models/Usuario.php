@@ -22,7 +22,7 @@ namespace Models {
 
         public function insert($email, $password)
         {
-            $sql = "INSERT INTO usuarios(email, password) VALUES ($1, md5($2))";
+            $sql = "INSERT INTO usuarios(email, password) VALUES ($1, md5($2)";
             $this->connection->runStatement($sql, [$email, $password]);
         }
     }

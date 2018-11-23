@@ -9,7 +9,7 @@ require_once __DIR__ . '/../Models/Producto.php';
 
 use Db\PgConnection;
 
-$con = new PgConnection('postgres', '1234', 'proyectoUno', 5432, 'localhost');
+$con = new PgConnection('postgres', 'lanegra15', 'proyectoUno', 5432, 'localhost');
 $con->connect();
 
 $usuario_model = new Models\Usuario($con);

@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
      <div class="form-group">
       <label for="telefono">Telefono</label>
-      <input type="text" class="form-control" placeholder="Telefono" name="telefono">
+      <input type="num" class="form-control" placeholder="Telefono" name="telefono">
     </div>
      <div class="form-group">
       <label for="correo">Correo</label>

@@ -26,8 +26,8 @@ foreach ($compras as $Compra) {
     echo '<td>' . $Compra['total'] . '</td>';
     echo '<td>';
 
-    echo '<a href="/compras/update.php?id=' . $compras['id'] . '" class="btn btn-warning mr-2">Editar</a>';
-    echo '<a href="/compras/delete.php?id=' . $compras['id'] . '" class="btn btn-danger">Eliminar</a>';
+    echo '<a href="/compras/update.php?id=' . $Compra['id'] . '" class="btn btn-warning mr-2">Editar</a>';
+    echo '<a href="/compras/delete.php?id=' . $Compra['id'] . '" class="btn btn-danger">Eliminar</a>';
     echo '</td>';
     echo '</tr>';
 }

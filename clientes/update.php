@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $telefono = filter_input(INPUT_POST, 'telefono', FILTER_SANITIZE_STRING);
     $correo = filter_input(INPUT_POST, 'correo', FILTER_SANITIZE_STRING);
     $direccion = filter_input(INPUT_POST, 'direccion', FILTER_SANITIZE_STRING);
-    $cliente_model->insert($nombre, $apellido, $telefono, $correo, $direccion);
+    $cliente_model->update($id, $nombre, $apellido, $telefono, $correo, $direccion);
     return header('Location: /clientes');
 }
 ?>
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <div class="form-group">
       <label for="telefono">Telefono</label>
-      <input type="text" class="form-control" placeholder="Telefono" name="telefono">
+      <input type="num" class="form-control" placeholder="Telefono" name="telefono">
     </div>
      <div class="form-group">
       <label for="correo">Correo</label>

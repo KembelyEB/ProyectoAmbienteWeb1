@@ -18,9 +18,9 @@ namespace Models {
             return $this->connection->runQuery('SELECT * FROM clientes ORDER BY id');
         }
 
-        public function insert($nombre, $apellido,$telefono,$correo,$direccion)
+        public function insert($nombre, $apellido, $telefono, $correo, $direccion)
         {
-            $this->connection->runStatement('INSERT INTO clientes(nombre,apellido,telefono,correo,direccion) VALUES ($1, $2,$3,$4,$5)', [$nombre, $apellido,$telefono,$correo,$direccion]);
+            $this->connection->runStatement('INSERT INTO clientes(nombre,apellido,telefono,correo,direccion) VALUES ($1,$2,$3,$4,$5)', [$nombre,$apellido,$telefono,$correo,$direccion]);
         }
 
         public function update($id, $nombre,$apellido,$telefono,$correo,$direccion)

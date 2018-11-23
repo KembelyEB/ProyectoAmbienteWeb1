@@ -11,10 +11,9 @@
   <table class="table table-striped table-bordered">
     <tr>
       <th>Id</th>
-      <th>Sku<th>
+      <th>Sku</th>
       <th>Nombre</th>
       <th>Descripción</th>
-      <th>Imagen</th>
        <th>Categoria</th>
        <th>Stock</th>
        <th>Precio</th>
@@ -30,8 +29,7 @@ foreach ($productos as $producto) {
     echo '<td>' . $producto['id'] . '</td>';
     echo '<td>' . $producto['sku'] . '</td>';
     echo '<td>' . $producto['nombre'] . '</td>';
-    echo '<td>' . $producto['descripción'] . '</td>';
-    echo '<td>' . $producto['imagen'] . '</td>';
+    echo '<td>' . $producto['descripcion'] . '</td>';
     echo '<td>' . $producto['id_categoria'] . '</td>';
     echo '<td>' . $producto['stock'] . '</td>';
     echo '<td>' . $producto['precio'] . '</td>';
